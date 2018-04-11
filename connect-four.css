@@ -1,0 +1,138 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #dcdcdc;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    display: none;
+}
+
+.board-container {
+    width: 800px;
+    height: 700px;
+    border: 2px solid #808080;
+    padding: 10px;
+    margin: 0 auto;
+    background: #ffb3cb;
+    position: relative;
+}
+
+.bubble {
+    width: 90px;
+    height: 90px;
+    border: 2px solid #808080;
+    border-radius: 50%;
+    margin: 10px;
+    float: right;
+    background: white;
+    -webkit-box-shadow: 3px 9px 14px 3px rgba(0, 0, 0, 0.26);
+    box-shadow: 3px 9px 14px 3px rgba(0, 0, 0, 0.26);
+}
+
+.pulsing {
+    animation: pulsing linear 0.5s infinite;
+}
+
+@keyframes pulsing {
+    0% {
+        width: 90px;
+        height: 90px;
+    }
+    50% {
+        width: 95px;
+        height: 95px;
+    }
+    100% {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+.column {
+    width: 100px;
+    float: right;
+    padding: 5px;
+}
+
+
+.bubble.player1 {
+    background-color: #e6e600;
+}
+
+.bubble.player2 {
+    background-color: purple;
+}
+
+.message {
+    width: 1000px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: purple;
+    text-align: center;
+    -webkit-box-shadow: 9px 10px 88px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 10px 88px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 9px 10px 88px 1px rgba(0, 0, 0, 0.75);
+    display: none;
+}
+
+.won {
+    font-size: 60px;
+    color: #b3b3e6;
+    margin-top: 20px;
+    font-weight: 100;
+}
+
+.glow {
+    position: absolute;
+    top: 40%;
+    right: 45%;
+    transform: translateX(-50%, -50%);
+}
+
+.start-again-button {
+    padding: 20px 30px;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    margin: 0px;
+    border: 1px solid black;
+    border-radius: 50%;
+    -webkit-box-shadow: 9px 9px 70px -9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 9px 70px -9px rgba(0, 0, 0, 0.75);
+    box-shadow: 9px 9px 70px -9px rgba(0, 0, 0, 0.75);
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    background: #ffb3cb;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 109, 74, 0.7),
+            0 0 0 0 rgba(255, 109, 74, 0.7);
+    }
+    40% {
+        box-shadow: 0 0 0 50px rgba(255, 109, 74, 0),
+            0 0 0 0 rgba(255, 109, 74, 0.7);
+    }
+    80% {
+        box-shadow: 0 0 0 50px rgba(255, 109, 74, 0),
+            0 0 0 30px rgba(255, 109, 74, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 109, 74, 0.7),
+            0 0 0 30px rgba(255, 109, 74, 0);
+    }
+}
